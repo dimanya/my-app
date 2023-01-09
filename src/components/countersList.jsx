@@ -22,7 +22,10 @@ const CountersList = () => {
     const handleIncrement = (id) => {
         const newCounters = counters.map((c)=>{
             if (c.id === id) {
-                c.value++
+                return {
+                    ...c,
+                    value: c.value + 1
+                }
             }   
             return c
         })
@@ -31,7 +34,10 @@ const CountersList = () => {
     const handleDecrement = (id) => {
         const newCounters = counters.map((c)=>{
             if (c.id === id) {
-                c.value--
+                return {
+                    ...c,
+                    value: c.value - 1
+                }
             }  
             return c 
         })
